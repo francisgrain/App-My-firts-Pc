@@ -6,6 +6,19 @@
   </li>
     <li>		implementation 'org.springframework.boot:spring-boot-starter-mail'
 </li>
+ <li>implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'  </li>
+
+ <li>	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  </li>
+
+	 <li>implementation 'org.springframework.boot:spring-boot-starter-web'  </li>
+
+	 <li>developmentOnly 'org.springframework.boot:spring-boot-devtools'  </li>
+
+	 <li>runtimeOnly 'com.mysql:mysql-connector-j'  </li>
+
+	 <li>testImplementation 'org.springframework.boot:spring-boot-starter-test'  </li>
+
+	 <li>testRuntimeOnly 'org.junit.platform:junit-platform-launcher'  </li>
 
 </ul>
 <img src="https://github.com/francisgrain/App-My-firts-Pc/assets/167990276/a37048ec-7822-4d3e-9a01-7c01e98d6079">
