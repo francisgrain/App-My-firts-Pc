@@ -12,7 +12,11 @@
 <li>testImplementation 'org.springframework.boot:spring-boot-starter-test'</li>
 <li>testRuntimeOnly 'org.junit.platform:junit-platform-launcher'</li>
 </ul>
-<h3>Repositorie: Gradle</h3>
+<h3>Repositorie utilizzato: Gradle</h3>
+
+<h3>Screenshots</h3>
 <img src="https://github.com/francisgrain/App-My-firts-Pc/assets/167990276/a37048ec-7822-4d3e-9a01-7c01e98d6079">
 <img src="https://github.com/francisgrain/App-My-firts-Pc/assets/167990276/07ab95f3-181a-4167-89e6-f7b2fd451240)">
+<img src="https://github.com/francisgrain/App-My-firts-Pc/assets/167990276/8493c0b0-5871-4196-9292-46179b587fc5)">
+<img src="https://github.com/francisgrain/App-My-firts-Pc/assets/167990276/47e9c27e-b842-4be4-a515-b2323d2eca00)">
 
