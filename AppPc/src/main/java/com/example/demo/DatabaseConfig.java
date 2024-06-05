@@ -14,7 +14,7 @@ public class DatabaseConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/mydatabase");
         dataSource.setUsername("root");
-        dataSource.setPassword("Contananne_2024!");
+        dataSource.setPassword("Insert here your DBS sql password");
         return dataSource;
     }
 }
