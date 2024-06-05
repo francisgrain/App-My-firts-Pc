@@ -21,6 +21,12 @@ import org.springframework.stereotype.Component;
 	        this.jdbcTemplateObject = jdbcTemplateObject;
 	    }
 	    
+	    //new
+	    public int insertPcOrder(String modello, int qnt) {
+	        String query = "INSERT INTO pcord (modello, qnt) VALUES (?, ?)";
+	        return jdbcTemplateObject.update(query, modello, qnt);
+	    }
+	    
 	    public int updatePezzi(int pezzi, String modello) {
 	        String query = "UPDATE pcord SET qnt = qnt + ? WHERE modello = ?";
 	        return jdbcTemplateObject.update(query, pezzi, modello);

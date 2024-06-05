@@ -44,40 +44,40 @@
                     <h1>Il tuo carrello</h1>
                     <p th:text="${message}"></p>
                     <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Modello</th>
-            <th>Quantità</th>
-            <th>Prezzo Singolo</th>
-            <th>Prezzo Totale</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="pc : ${lista}">
-            <td>
-                <input type="hidden" name="modello" th:value="${pc.modello}">
-                <span th:text="${pc.modello}"></span>
-            </td>
-            <td>
-                <input type="hidden" name="qnt" th:value="${pc.qnt}">
-                <span th:text="${pc.qnt}"></span>
-            </td>
-            <td>
-                <input type="hidden" name="prezzo" th:value="${pc.prezzo}">
-                <span th:text="${pc.prezzo}"></span>
-            </td>
-            <td>
-                <!-- Calcola il prezzo totale per questo PC -->
-                <span th:text="${pc.prezzo * pc.qnt}"></span>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                        <thead>
+                            <tr>
+                                <th>Modello</th>
+                                <th>Quantità</th>
+                                <th>Prezzo Singolo</th>
+                                <th>Prezzo Totale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="pc : ${lista}">
+                                <td>
+                                    <input type="hidden" name="modello" th:value="${pc.modello}">
+                                    <span th:text="${pc.modello}"></span>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="qnt" th:value="${pc.qnt}">
+                                    <span th:text="${pc.qnt}"></span>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="prezzo" th:value="${pc.getPrezzo()}">
+                                    <span th:text="${pc.getPrezzo()}"></span>
+                                </td>
+                                <td>
+                                    <!-- Calcola il prezzo totale per questo PC -->
+                                    <span th:text="${pc.prezzo * pc.qnt}"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <h3>Prezzo Totale: <span th:text="${prezzo}"></span></h3>
                     
-                     Inserisci la tua mail per completare l'ordine
-      <input type="text" name="email">
+                    Inserisci la tua mail per completare l'ordine
+                    <input type="text" name="email">
                     <button type="submit" value="conferma" class="btn btn-success">Procedi al pagamento</button>
                 </div>
             </div>

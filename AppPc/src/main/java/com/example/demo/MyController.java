@@ -58,6 +58,7 @@ public class MyController {
         String urlImage = ImgUrl[3];
         
         computer pc1 = new computer();
+		pcOrd pcOrd = new pcOrd(); //new
         pc1.setId(0);
         pc1.setMarca(marca);
         pc1.setTipologia(tipologia);
@@ -66,9 +67,12 @@ public class MyController {
         pc1.setQnt(Integer.parseInt(qnt));
         pc1.setUrl(urlImage);
         pc1.setPrezzo(Double.parseDouble(prezzo));
-
+        pcOrd.setModello(modello);//new
+		pcOrd.setQnt(0);//new
+		
         model.addAttribute("computer", pc1);
         computerJDBCTemp.insertComputer(marca, tipologia, modello, descrizione, Integer.parseInt(qnt), urlImage, Double.parseDouble(prezzo));
+		pcOrdJDBCTemp.insertPcOrder(modello, pcOrd.getQnt());
         return "insComputer";
     }
 
@@ -192,6 +196,7 @@ public class MyController {
                 for (pcOrd pc : carrello) {
                     if (pc.getModello().equals(comp.getModello())) {
                         pc.setQnt(pc.getQnt() + quantita); // Aggiungi quantità se esiste già
+                        pc.setPrezzo(comp.getPrezzo());
                         found = true;
                         break;
                     }
@@ -207,18 +212,23 @@ public class MyController {
             }
         }
 
+        //ArrayList<Double> prezziParziali = new ArrayList<>(); 
         // Calcola il prezzo totale
         for (pcOrd pc : carrello) {
+        	
+        	System.out.println(pc.getModello());
+        	
             for (computer comp : lista) {
                 if (comp.getModello().equals(pc.getModello())) {
                     prezzoTotale += comp.getPrezzo() * pc.getQnt();
+                    pc.setPrezzo(comp.getPrezzo());
                 }
             }
         }
 
         model.addAttribute("lista", carrello);
         model.addAttribute("prezzo", prezzoTotale);
-
+        //System.out.println(carrello);
         return "carrello";
     }
 
@@ -256,10 +266,11 @@ public class MyController {
                         computer.setQnt(qnt.get(j));
                         computer.setPrezzo(lista.get(i).getPrezzo());
                         pc.add(computer);
-
+                        	
+                        //System.out.println(lista.get(i).getPrezzo());
                         // Riduzione della quantità in magazzino al momento della conferma
-                        int nuovaQuantita = lista.get(i).getQnt() - qnt.get(j);
-                        computerJDBCTemp.updateCarrello(nuovaQuantita, lista.get(i).getId());
+                        computerJDBCTemp.updateCarrello(qnt.get(j), lista.get(i).getId());
+                        
                 }
             }
         }
