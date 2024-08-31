@@ -1,4 +1,4 @@
-<h1>My First Pc - Application created at the end of the Web Developer course - Talentform</h1>
+<h1>My First Pc - Application created at the end of the Web Developer course - TalentForm</h1>
 <h2>Application created with Spring Boot and Thymeleaf for managing a warehouse of items (PCs) with the input of quantity, price, description, technical specifications, and image, connected to a MySQL database for warehouse management. Implementation of a user/customer interface that emulates the typical e-commerce store to purchase items with order summary confirmation via email.</h2>
 
 <h3>Dependencies used:</h3>
